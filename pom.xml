@@ -142,4 +142,20 @@
             </plugin>
         </plugins>
     </build>
+         
+         <!--proguard的包在阿里云central仓库和maven中央仓库有，配置一些第三方源有可能不存在，所以添加此局部配置，配置项目的jar包仓库-->
+	<repositories>
+		<!--阿里云仓库，id=central，会覆盖掉setting.xml中配置的中央仓库-->
+		<repository>
+			<id>central</id>
+			<name>central maven</name>
+			<url>https://maven.aliyun.com/repository/central</url>
+		</repository>
+		<!--maven官网-->
+		<repository>
+			<id>public</id>
+			<name>public maven</name>
+			<url>https://mvnrepository.com</url>
+		</repository>
+	</repositories>
 </project>
